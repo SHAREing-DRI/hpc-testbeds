@@ -19,6 +19,9 @@
   </thead>
   <tbody>
     {% for system in site.systems %}
+      {% if system.url == "/systems/system-template/" %}
+        {% continue %}
+      {% endif %}
     <tr>
       <td><a href="{{ system.url }}">{{ system.name }}</a></td>
       <td>{{ site.data.statuses[system.status]["shortdescription"] }}</td>
