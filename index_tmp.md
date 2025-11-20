@@ -4,8 +4,8 @@ page_css:
 ---
 
 
-<script src="https://cdn.datatables.net/2.3.5/js/dataTables.min.js" crossorigin=""></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin=""></script>
+<script src="https://cdn.datatables.net/2.3.5/js/dataTables.min.js" crossorigin=""></script>
 
 
 <table id="systems" class="display">
