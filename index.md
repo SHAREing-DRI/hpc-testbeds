@@ -9,8 +9,18 @@ page_css:
 
 ## SHAREing HPC Testbeds
 
-The table below shows
-a list of HPC testbed and production systems available to UK researchers.
+UK researchers have access to a vast number of testbeds and machines
+where they can quickly get access and trial new codes or ideas.
+Some of these machines have been procured through governmental grants
+such as the ExCALIBUR H&ES programme,
+some universities open up their systems to UKRI-eligible colleagues,
+and some commercial providers grant access to their systems in the Cloud,
+too.
+Unfortunately,
+it is sometimes difficult to keep track of all the different opportunities.
+This page collects systems as well as some meta information
+such that it is easier for researchers to find the right system for the right purpose.
+
 For each system,
 click its name to find out more about that system.
 
@@ -116,8 +126,13 @@ let table = new DataTable(
 );
 </script>
 
+## Disclaimer
+
+This page is not yet complete,
+and we plan to work towards precise guidelines
+on what additional detail should be documented per cluster on such an overview page.
+
 Is your system not included on this list?
 Please [add it at the GitHub repository for this site][github]!
-
 
 [github]: <https://github.com/SHAREing-dri/hpc-testbeds>
