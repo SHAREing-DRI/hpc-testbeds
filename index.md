@@ -49,7 +49,7 @@ click its name to find out more about that system.
         {% continue %}
       {% endif %}
     <tr>
-      <td><a href="{{ system.url }}">{{ system.name }}</a></td>
+      <td><a href="{{ site.baseurl }}{{ system.url }}">{{ system.name }}</a></td>
       <td>{{ site.data.statuses[system.status]["shortdescription"] }}</td>
       <td>{{ site.data.categories[system.category]["shortdescription"] }}</td>
       <td>{{ site.data.focuses[system.focus]["shortdescription"] }}</td>
