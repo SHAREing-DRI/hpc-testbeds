@@ -24,7 +24,7 @@ masthead_title: SHAREing
 masthead_url: https://shareing-dri.github.io
 baseurl: /hpc-testbeds
 
-repository: edbennett/hpc-testbeds
+repository: SHAREing-DRI/hpc-testbeds
 
 # Liquid
 liquid:
