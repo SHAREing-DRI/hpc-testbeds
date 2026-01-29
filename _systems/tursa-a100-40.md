@@ -1,5 +1,5 @@
 ---
-name: "Tursa"
+name: "Tursa (A100-40GB)"
 status: in-service
 category: production
 focus: discipline
@@ -9,10 +9,9 @@ funders:
 - STFC
 - UKRI
 - DSIT
-nodes: 181
+nodes: 114
 accelerators:
 - "NVIDIA A100 40GB"
-- "NVIDIA A100 80GB"
 accelerator-count: 4
 manufacturer: "Atos"
 scheduler: "Slurm"
