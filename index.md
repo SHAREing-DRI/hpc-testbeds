@@ -1,4 +1,5 @@
 ---
+title: SHAREing HPC Testbeds
 page_css:
 - "https://cdn.datatables.net/2.3.5/css/dataTables.dataTables.min.css"
 ---
@@ -6,8 +7,6 @@ page_css:
 
 <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin=""></script>
 <script src="https://cdn.datatables.net/2.3.5/js/dataTables.min.js" crossorigin=""></script>
-
-## SHAREing HPC Testbeds
 
 UK researchers have access to a vast number of testbeds and machines
 where they can quickly get access and trial new codes or ideas.
@@ -74,20 +73,20 @@ click its name to find out more about that system.
     {% endfor %}
   </tbody>
   <tfoot> <!-- add empty space to indicate we want to have a filter drop-down -->
-    <th></th>
+    <th aria-label="Empty table footer for System name column"></th>
     <th>&nbsp;</th> <!-- Status -->
     <th>&nbsp;</th> <!-- Categories -->
     <th>&nbsp;</th> <!-- Focus -->
     <th>&nbsp;</th> <!-- Focus detail -->
     <th>&nbsp;</th> <!-- Grouping -->
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th aria-label="Empty table footer for Funders column"></th>
+    <th aria-label="Empty table footer for Nodes column"></th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
     <th>&nbsp;</th> <!-- Manufacturer -->
     <th>&nbsp;</th> <!-- Scheduler -->
-    <th></th>
-    <th></th>
+    <th aria-label="Empty table footer for Interconnects column"></th>
+    <th aria-label="Empty table footer for Reference column"></th>
   </tfoot>
 </table>
 
@@ -109,6 +108,7 @@ let table = new DataTable(
                 let select = document.createElement('select');
                 select.style.width = "100%";
                 select.add(new Option(''));
+                select.title = column.header().innerText;
                 column.footer().replaceChildren(select);
 
                 // Apply listener for user change in value
