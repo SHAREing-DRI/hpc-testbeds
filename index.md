@@ -108,7 +108,7 @@ let table = new DataTable(
                 let select = document.createElement('select');
                 select.style.width = "100%";
                 select.add(new Option(''));
-                select.title = column.header().innerText;
+                select.title = "Filter " + column.header().innerText;
                 column.footer().replaceChildren(select);
 
                 // Apply listener for user change in value
