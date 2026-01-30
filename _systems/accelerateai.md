@@ -8,12 +8,12 @@ grouping: "Supercomputing Wales"
 funders:
 - ERDF
 - Welsh Government
-nodes: 6
-accelerators:
-- "NVIDIA A100 40GB"
-accelerator-count: 8
-manufacturer: "Atos"
-scheduler: "Slurm"
+partitions:
+- nodes: 6
+  accelerator: "NVIDIA A100 40GB"
+  accelerator-count: 8
+  manufacturer: "Atos"
+  scheduler: "Slurm"
 interconnects:
 - Infiniband HDR
 - NVLink

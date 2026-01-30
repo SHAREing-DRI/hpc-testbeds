@@ -54,22 +54,24 @@ click its name to find out more about that system.
       {% if system.url == "/systems/system-template/" %}
         {% continue %}
       {% endif %}
+        {% for partition in system.partitions %}
     <tr>
-      <td><a href="{{ site.baseurl }}{{ system.url }}">{{ system.name }}</a></td>
+      <td><a href="{{ site.baseurl }}{{ system.url }}">{{ system.name }}{% if system.partitions.size > 1 %} ({{ partition.accelerator }}){% endif %}</a></td>
       <td>{{ site.data.statuses[system.status]["shortdescription"] }}</td>
       <td>{{ site.data.categories[system.category]["shortdescription"] }}</td>
       <td>{{ site.data.focuses[system.focus]["shortdescription"] }}</td>
       <td>{{ system.focus-detail }}</td>
       <td>{{ system.grouping }}</td>
       <td>{{ system.funders | join: "<br>" }}</td>
-      <td>{{ system.nodes }}</td>
-      <td>{{ system.accelerators | join: "<br>" }}</td>
-      <td>{{ system.accelerator-count }}</td>
-      <td>{{ system.manufacturer }}</td>
-      <td>{{ system.scheduler }}</td>
+      <td>{{ partition.nodes }}</td>
+      <td>{{ partition.accelerator }}</td>
+      <td>{{ partition.accelerator-count }}</td>
+      <td>{{ partition.manufacturer }}</td>
+      <td>{{ partition.scheduler }}</td>
       <td>{{ system.interconnects | join: "<br>" }}</td>
       <td><a href="{{ system.reference }}">Link</a></td>
     </tr>
+      {% endfor %}
     {% endfor %}
   </tbody>
   <tfoot> <!-- add empty space to indicate we want to have a filter drop-down -->

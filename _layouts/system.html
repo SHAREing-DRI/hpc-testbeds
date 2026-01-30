@@ -19,14 +19,28 @@ layout: default
         <ul>
           <li>{{ site.data.categories[page.category].shortdescription }}</li>
           <li>{{ site.data.statuses[page.status].shortdescription }}</li>
-          <li>{{ site.data.focuses[page.focus].shortdescription }}{% if page.focus-detail %}for {{ page.focus-detail }}{% endif %}</li>
+          <li>{{ site.data.focuses[page.focus].shortdescription }}{% if page.focus-detail %} for {{ page.focus-detail }}{% endif %}</li>
           {% if page.funders %}
-          <li>funded by {{ page.funders | join: ", " }}</li>
+          <li>Funded by {{ page.funders | join: ", " }}</li>
           {% endif %}
-          <li>{{ page.nodes }} nodes, with {{ page.accelerator-count }} accelerators per node</li>
-          <li>Accelerators: {{ page.accelerators | join: ", " }}</li>
-          <li>Manufactured by {{ page.manufacturer }}</li>
-          <li>Scheduler: {{ page.scheduler }}</li>
+          {% if page.partitions.size > 1 %}
+          <li> Partitions </li>
+          <ul>
+          {% endif %}
+          {% for partition in page.partitions %}
+            <li>
+              {{ partition.nodes }} nodes,
+              with {{ partition.accelerator-count }}
+              {{ partition.accelerator }} accelerator{% if partition.accelerator-count > 1 %}s{% endif %} per node
+            </li>
+            {% if page.partitions.size > 1 %}<ul>{% endif %}
+              <li>Manufactured by {{ partition.manufacturer }}</li>
+              <li>Scheduler: {{ partition.scheduler }}</li>
+            {% if page.partitions.size > 1 %}</ul>{% endif %}
+          {% endfor %}
+          {% if page.partitions.size > 1 %}
+          </ul>
+          {% endif %}
           <li>Interconnects: {{ page.interconnects | join: ", " }}</li>
         </ul>
 
