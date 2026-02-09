@@ -11,7 +11,7 @@ funders:
 - ExCALIBUR
 nodes: 1
 accelerators:
-- "AMD MI300X (192GB)"
+- "AMD MI300X 192GB"
 accelerator-count: 8
 manufacturer: "AMD"
 scheduler: "Slurm"

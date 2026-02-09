@@ -11,7 +11,7 @@ funders:
 - ExCALIBUR
 nodes: 1
 accelerators:
-- "NVIDIA H100 NVL (94GB)"
+- "NVIDIA H100 NVL 94GB"
 accelerator-count: 1
 manufacturer: "NVIDIA"
 scheduler: "Slurm"

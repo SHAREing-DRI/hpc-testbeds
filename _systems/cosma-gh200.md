@@ -11,7 +11,7 @@ funders:
 - ExCALIBUR
 nodes: 2
 accelerators:
-- "NVIDIA GH200 (96GB)"
+- "NVIDIA GH200 96GB"
 accelerator-count: 1
 manufacturer: "NVIDIA"
 scheduler: "Slurm"

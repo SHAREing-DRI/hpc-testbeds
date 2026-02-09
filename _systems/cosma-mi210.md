@@ -11,7 +11,7 @@ funders:
 - ExCALIBUR
 nodes: 2
 accelerators:
-- "AMD MI210 (64GB)"
+- "AMD MI210 64GB"
 accelerator-count: 2
 manufacturer: "AMD"
 scheduler: "Slurm"
