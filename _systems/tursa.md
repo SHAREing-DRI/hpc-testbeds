@@ -9,13 +9,17 @@ funders:
 - STFC
 - UKRI
 - DSIT
-nodes: 181
-accelerators:
-- "NVIDIA A100 40GB"
-- "NVIDIA A100 80GB"
-accelerator-count: 4
-manufacturer: "Atos"
-scheduler: "Slurm"
+partitions:
+- nodes: 114
+  accelerator: "NVIDIA A100 40GB"
+  accelerator-count: 4
+  manufacturer: "Atos"
+  scheduler: "Slurm"
+- nodes: 65
+  accelerator: "NVIDIA A100 80GB"
+  accelerator-count: 4
+  manufacturer: "Atos"
+  scheduler: "Slurm"
 interconnects:
 - Infiniband HDR
 - NVLink

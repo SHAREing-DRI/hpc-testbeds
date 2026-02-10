@@ -41,7 +41,7 @@ and then follow either of the following sets of instructions:
 
        bundle install
        bundle exec jekyll serve
-   
+
    Open `https://localhost:4000` in your browser
    and verify that your system shows up in the table,
    and that its page displays correctly when you click through to it.
@@ -52,7 +52,8 @@ and then follow either of the following sets of instructions:
 
 8. If you are adding multiple systems as part of the same cluster
    (for example,
-   if you there are multiple diverse partitions),
+   if you there are partitions with entirely different
+   scopes, funders, and access mechanisms),
    repeat the above steps 3&ndash;7 for each system.
 9. Open a pull request to the `SHAREing-dri/hpc-testbeds` repository.
 
@@ -65,22 +66,22 @@ and then follow either of the following sets of instructions:
 4. Give your new file a name ending `md`;
    for example,
    `my-awesome-system.md`.
-4. Copy the contents of the file
+5. Copy the contents of the file
    [`_systems/system-template`](_systems/system-template)
    into your new file.
-4. Fill out the fields listed in
+6. Fill out the fields listed in
    the block at the top of the file surrounded by `---`.
-5. Add as much or as little text description of the system as you like,
+7. Add as much or as little text description of the system as you like,
    below the `---` block.
    Examples of things to include are described in the template.
-6. Commit this file to the repository.
-7. When prompted by GitHub,
+8. Commit this file to the repository.
+9. When prompted by GitHub,
    open a pull request to the `SHAREing-dri/hpc-testbeds` repository.
 
 ## Updating system information
 
 Pull requests to update system information where this has changed are encouraged.
-   
+
 ## Inclusion criteria
 
 To be included in this directory,
@@ -92,7 +93,8 @@ a system should:
 - Be in the UK or accessible to UK researchers.
   - For example,
     EuroHPC systems to which the UK subscribes would be in scope;
-    systems at US National Labs requiring a US collaborator to gain access would not.
+    systems at US National Labs requiring a US collaborator to gain access
+    would not.
 - Be accessible to researchers from outside the system owner's research group
   via some defined process.
   - A "defined process" may be "send an email request",

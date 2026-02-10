@@ -7,13 +7,12 @@ focus-detail: <!-- Detail to add after the focus, which will follow the word "fo
 grouping: <!-- If this system is part of a group of related systems, name the group here. -->
 funders:
 - <!-- Add a list here of organisations funding the system, each preceded by a hyphen -->
-nodes: <!-- How many nodes does the system have? -->
-accelerators:
-- <!-- Add a list of accelerators used in the system, each preceded by a hyphen. -->
-- <!-- If the accelerators are substanatially different, then consider creating files for the two partitions as separate systems. -->
-accelerator-count: <!-- How many accelerators are present per node? -->
-manufacturer: <!-- Who manufactured the system? E.g. Dell, Fujitsu, Lenovo -->
-scheduler: <!-- What scheduler is used to manage jobs? E.g. Slurm, PBS Pro, SGE, Spectrum Scale -->
+partitions: <!-- Duplicate the following block for each partition your system has -->
+- nodes: <!-- How many nodes does the system have? -->
+  accelerator: <!-- What accelerator is used in this partition? -->
+  accelerator-count: <!-- How many of these accelerators are present per node? -->
+  manufacturer: <!-- Who manufactured the nodes in this partition? E.g. Dell, Fujitsu, Lenovo -->
+  scheduler: <!-- What scheduler is used to manage on this partition? E.g. Slurm, PBS Pro, SGE, Spectrum Scale, Direct SSH -->
 interconnects:
 - <!-- Add a list of interconnects present in the system, each preceded by a hyphen. -->
 - <!-- This includes both inter-GPU (e.g. NVLink) and inter-node (e.g. Infiniband) interconnects
