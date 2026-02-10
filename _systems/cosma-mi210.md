@@ -73,4 +73,4 @@ rocm-smi # checks existence of GPU
 - Maximum wall time: 3 days
 - Nodes are non-exclusive by default (shared with other users). Use `--exclusive` if you require the entire node
 - The AMD ROCm software stack is installed. ROCm 6.3.0 is available at `/opt/rocm-6.3.0/bin/hipcc`
-- Any existing CUDA code needs to be HIP-ified with the hipify script provided as part of ROCm
+- CUDA code must be converted to HIP using the `hipify` script provided with ROCm
