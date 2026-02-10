@@ -48,7 +48,7 @@ Access requires a COSMA account, obtained via the [DiRAC SAFE portal](https://sa
 1. Create a SAFE account with an institutional email.
 2. Upload an SSH public key on SAFE. If you do not have one, generate with `ssh-keygen -t ed25519`.
 2. Request a login account. This requires selecting a project, either:
-- Project `do016` for testbed access.
+- Project `do016` for NVIDIA GPU testbed access.
 - A DiRAC project code for a given allocation (provided by a supervisor).
 3. **Wait** for the account to be approved by the project manager. Keep an eye on your email!
 4. Connect to COSMA via SSH: `ssh username@login8.cosma.dur.ac.uk` (Note: On first login you will be asked to change the password provided in your email)
