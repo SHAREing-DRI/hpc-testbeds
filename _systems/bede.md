@@ -22,12 +22,12 @@ partitions:
 - nodes: 7
   accelerator: H100 96GB
   accelerator-count: 1
-  manufacturer: NVIDIA
+  manufacturer: gh001-gh006 Vespertec, gh007 SuperMicro
   scheduler: Slurm
 - nodes: 1
   accelerator: H100 144GB
   accelerator-count: 2
-  manufacturer: NVIDIA
+  manufacturer: gh008 SuperMicro
   scheduler: Slurm
 interconnects:
 - InfiniBand EDR
@@ -48,12 +48,14 @@ Within each `gpu` node in the original system, the CPU and GPUs are linked to a 
 
 ### Partition specifications
 
+Note that all Grace Hopper nodes are in the `gh` partition but have two different specifications within the partition. The monster node `gh008` can be requested with the sbatch `--nodelist` argument.
+
 | Partition | Accelerator | RAM | CPU | Connectivity | Access |
 |-|-|-|-|-|-|
 | `gpu` | 4x Tesla V100 32GB | 512GB DDR4 | 32 cores/4 threads per core @2.7GHz (2xIBM POWER9) | 2x Mellanox EDR Infiniband | Slurm via `login` nodes |
 | `infer` | 4x Tesla T4 16GB PCIe | 256GB DDR4 | 40 cores/4 threads per core @2.9GHz (2xIBM POWER9) | 1x Mellanox EDR Infiniband | Slurm via `login` nodes |
-| `gh` | H100 96GB | 480GB LPDDR5X | 72 cores @3.483GHz (NVIDIA Grace ARM Neoverse V2) | 1x Mellanox CONNECTX-7 NDR200 @100Gbps | Slurm via `gh-login` nodes |
-| `gh` | 2x H100 144GB | 960GB LPDDR5X | 144 cores @3.483GHz (2x NVIDIA Grace ARM Neoverse V2) | 2x Mellanox CONNECTX-7 NDR200 @100Gbps | Slurm via `gh-login` nodes |
+| `gh001`-`gh007` | H100 96GB | 480GB LPDDR5X | 72 cores @3.483GHz (NVIDIA Grace ARM Neoverse V2) | 1x Mellanox CONNECTX-7 NDR200 @100Gbps | Slurm via `gh-login` nodes |
+| `gh008` | 2x H100 144GB | 960GB LPDDR5X | 144 cores @3.483GHz (2x NVIDIA Grace ARM Neoverse V2) | 2x Mellanox CONNECTX-7 NDR200 @100Gbps | Slurm via `gh-login` nodes |
 
 ### Documentation
 
