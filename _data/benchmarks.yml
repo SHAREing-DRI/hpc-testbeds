@@ -1,0 +1,10 @@
+memory-bandwidth-gb-s:
+  description: Memory bandwidth
+  units: GB/s
+floating-point-tflop-s:
+  description: Floating-point performance
+  units: TFLOP/s
+  require_precision: true
+io-bandwidth-gb-s:
+  description: I/O bandwidth
+  units: GB/s

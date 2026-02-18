@@ -34,6 +34,39 @@ layout: default
               {{ partition.accelerator }} accelerator{% if partition.accelerator-count > 1 %}s{% endif %} per node
             </li>
             {% if page.partitions.size > 1 %}<ul>{% endif %}
+              {% if partition.benchmarks and partition.benchmarks.size > 0 %}
+              <li>
+                <a class="toggle-benchmark-details">
+                  Benchmarks
+                  <span class="benchmark-details-shown" style="display: none;">▴</span>
+                  <span class="benchmark-details-hidden" style="display: inline;">({{ partition.benchmarks.size }}) ▾</span>
+                </a>
+              </li>
+              <ul class="benchmark-details">
+                {% for benchmark in partition.benchmarks %}
+                  <li>
+                  {% if site.data.benchmarks contains benchmark.type %}
+                    {{ site.data.benchmarks[benchmark.type].description }} ({{ benchmark.name }}):
+                  {% else %}
+                    {{ benchmark.name }}:
+                  {% endif %}
+                  {{ benchmark.value }}
+                  {% if site.data.benchmarks contains benchmark.type %}
+                    {{ site.data.benchmarks[benchmark.type].units }}
+                  {% endif %}
+                  {% if benchmark contains "precision" %}
+                    ({{ benchmark.precision }} precision)
+                  {% endif %}
+                  {% if benchmark contains "parameters" %}
+                    <ul>
+                    {% for param_tuple in benchmark.parameters %}
+                      <li>{{ param_tuple[0] }}: {{ param_tuple[1] }}</li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+              {% endif %}
               <li>Manufactured by {{ partition.manufacturer }}</li>
               <li>Scheduler: {{ partition.scheduler }}</li>
             {% if page.partitions.size > 1 %}</ul>{% endif %}
@@ -53,3 +86,23 @@ layout: default
     </div>
   </article>
 </main>
+
+<script>
+  // Hide details on page load so that users without JavaScript can see them
+  document.querySelector('ul.benchmark-details').style.display = 'none';
+
+  // Toggle the visibility of the benchmark details
+  document.querySelector('a.toggle-benchmark-details').addEventListener('click', function(e) {
+      e.preventDefault();
+      benchmarkDetails = document.querySelector('ul.benchmark-details');
+      if (benchmarkDetails.style.display == 'none') {
+          benchmarkDetails.style.display = 'block';
+          document.querySelector('span.benchmark-details-shown').style.display = 'inline';
+          document.querySelector('span.benchmark-details-hidden').style.display = 'none';
+      } else {
+          benchmarkDetails.style.display = 'none';
+          document.querySelector('span.benchmark-details-shown').style.display = 'none';
+          document.querySelector('span.benchmark-details-hidden').style.display = 'inline';
+      }
+  });
+</script>

@@ -23,7 +23,7 @@ such that it is easier for researchers to find the right system for the right pu
 For each system,
 click its name to find out more about that system.
 
-{% assign columns = "System name,Status,Category,Focus,Focus area,Grouping,Funders,Nodes,Accelerators,Accelerator count per node,Manufacturer,Scheduler,Interconnects,Reference" | split: "," %}
+{% assign columns = "System name,Status,Category,Focus,Focus area,Grouping,Funders,Nodes,Accelerators,Accelerator count per node,Memory bandwidth,Memory bandwidth benchmark,Floating point performance,Floating point performance precision,Floating point benchmark,I/O bandwidth,I/O bandwidth benchmark,Manufacturer,Scheduler,Interconnects,Reference" | split: "," %}
 
 <p style="margin-bottom: 0px; padding-bottom: 0px;">
   <a class="toggle-visibility-controls">
@@ -66,6 +66,29 @@ click its name to find out more about that system.
       <td>{{ partition.nodes }}</td>
       <td>{{ partition.accelerator }}</td>
       <td>{{ partition.accelerator-count }}</td>
+      {% for benchmark_category in site.data.benchmarks %}
+        {% assign category_name = benchmark_category[0] %}
+        {% assign category = benchmark_category[1] %}
+        {% assign category_found = false %}
+        {% for benchmark in partition.benchmarks %}
+          {% if benchmark.type == category_name %}
+            {% assign category_found = true %}
+      <td>{{ benchmark.value }} {{ category.units }}</td>
+      {% if category.precision %}
+      <td>{{ benchmark.precision }}</td>
+      {% endif %}
+      <td>{{ benchmark.name }}</td>
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {% unless category_found %}
+        <td>&mdash;</td>
+        <td>&mdash;</td>
+          {% if category.require_precision %}
+        <td>&mdash;</td>
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
       <td>{{ partition.manufacturer }}</td>
       <td>{{ partition.scheduler }}</td>
       <td>{{ system.interconnects | join: "<br>" }}</td>
@@ -83,8 +106,16 @@ click its name to find out more about that system.
     <th>&nbsp;</th> <!-- Grouping -->
     <th aria-label="Empty table footer for Funders column"></th>
     <th aria-label="Empty table footer for Nodes column"></th>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <th>&nbsp;</th> <!-- Accelerator -->
+    <th>&nbsp;</th> <!-- Accelerator count -->
+    {% for benchmark_category in site.data.benchmarks %}
+      {% assign category = benchmark_category[1] %}
+    <th aria-label="Empty table footer for {{ category.description }} value column"></th>
+      {% if category.require_precision %}
+    <th>&nbsp;</th> <!-- {{ category.description }} benchmark precision -->
+      {% endif %}
+    <th>&nbsp;</th> <!-- {{ category.description }} benchmark name -->
+    {% endfor %}
     <th>&nbsp;</th> <!-- Manufacturer -->
     <th>&nbsp;</th> <!-- Scheduler -->
     <th aria-label="Empty table footer for Interconnects column"></th>

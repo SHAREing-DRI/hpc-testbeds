@@ -13,6 +13,15 @@ partitions: <!-- Duplicate the following block for each partition your system ha
   accelerator-count: <!-- How many of these accelerators are present per node? -->
   manufacturer: <!-- Who manufactured the nodes in this partition? E.g. Dell, Fujitsu, Lenovo -->
   scheduler: <!-- What scheduler is used to manage on this partition? E.g. Slurm, PBS Pro, SGE, Spectrum Scale, Direct SSH -->
+  benchmarks: <!-- Single-node benchmark results can be given here, or this section can be removed -->
+  - type: <!-- One of memory-bandwidth-gb-s, floating-point-tflop-s, or io-bandwidth-gb-s. Or something else, but that won't be shown in the main table. -->
+    name: <!-- The name of the specific implementation. (For example "BabelStream" for memory bandwidth.) -->
+    value: <!-- The benchmark result. Memory and I/O bandwidth must be in GB/s; floating point in TFLOP/s. -->
+    precision: <!-- For floating-point-tflop-s, this may be "fp16", "fp32", "fp64". For other benchmarks, remove this line. -->
+    parameters: <!-- Specific benchmark parameters may be specified here, or this block may be removed. -->
+      array_size:
+      iterations:
+  - <!-- Additional benchmarks can be added by repeating the above block. -->
 interconnects:
 - <!-- Add a list of interconnects present in the system, each preceded by a hyphen. -->
 - <!-- This includes both inter-GPU (e.g. NVLink) and inter-node (e.g. Infiniband) interconnects
