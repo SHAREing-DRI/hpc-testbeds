@@ -9,12 +9,12 @@ funders:
 - STFC
 - DiRAC
 - ExCALIBUR
-nodes: 8
-accelerators:
-- "NVIDIA A30"
-accelerator-count: 1
-manufacturer: "NVIDIA"
-scheduler: "Slurm"
+partitions:
+- nodes: 8
+  accelerator: "NVIDIA A30"
+  accelerator-count: 1
+  manufacturer: "NVIDIA"
+  scheduler: "Slurm"
 interconnects:
 - CerIO composable fabric
 reference: https://cosma.readthedocs.io/en/latest/gpu.html#dine2

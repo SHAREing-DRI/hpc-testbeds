@@ -9,12 +9,20 @@ funders:
 - STFC
 - DiRAC
 - ExCALIBUR
-nodes: 3
-accelerators:
-- "NVIDIA A100 40GB"
-accelerator-count: 1-3
-manufacturer: "Dell"
-scheduler: "Slurm"
+partitions:
+- nodes: 3
+  accelerator: "NVIDIA A100 40GB"
+  accelerator-count: 1-3
+  manufacturer: "Dell"
+  scheduler: "Slurm"
+  benchmarks:
+  - type: memory-bandwidth-gb-s
+    name: BabelStream
+    value: 1352
+    parameters:
+      array_size: 134217728
+      iterations: 100
+      precision: FP64
 interconnects:
 - Infiniband HDR200
 - Liqid composable fabric

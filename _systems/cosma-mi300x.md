@@ -9,12 +9,12 @@ funders:
 - STFC
 - DiRAC
 - ExCALIBUR
-nodes: 1
-accelerators:
-- "AMD MI300X 192GB"
-accelerator-count: 8
-manufacturer: "AMD"
-scheduler: "Slurm"
+partitions:
+- nodes: 1
+  accelerator: "AMD MI300X 192GB"
+  accelerator-count: 8
+  manufacturer: "AMD"
+  scheduler: "Slurm"
 interconnects:
 reference: https://cosma.readthedocs.io/en/latest/gpu.html#mi300x 
 ---

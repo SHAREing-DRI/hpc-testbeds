@@ -9,12 +9,20 @@ funders:
 - STFC
 - DiRAC
 - ExCALIBUR
-nodes: 1
-accelerators:
-- "AMD MI100"
-accelerator-count: 1
-manufacturer: "AMD"
-scheduler: "Slurm"
+partitions:
+- nodes: 1
+  accelerator: "AMD MI100"
+  accelerator-count: 1
+  manufacturer: "AMD"
+  scheduler: "Slurm"
+  benchmarks:
+  - type: memory-bandwidth-gb-s
+    name: BabelStream
+    value: 947
+    parameters:
+      array_size: 134217728
+      iterations: 100
+      precision: FP64
 interconnects:
 reference: https://cosma.readthedocs.io/en/latest/gpu.html
 ---

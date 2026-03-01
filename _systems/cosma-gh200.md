@@ -9,12 +9,27 @@ funders:
 - STFC
 - DiRAC
 - ExCALIBUR
-nodes: 2
-accelerators:
-- "NVIDIA GH200 96GB"
-accelerator-count: 1
-manufacturer: "NVIDIA"
-scheduler: "Slurm"
+partitions:
+- name: "gn002"
+  nodes: 1
+  accelerator: "NVIDIA GH200"
+  accelerator-count: 1
+  manufacturer: "NVIDIA"
+  scheduler: "Direct SSH"
+- name: "gn003"
+  nodes: 1
+  accelerator: "NVIDIA GH200"
+  accelerator-count: 1
+  manufacturer: "NVIDIA"
+  scheduler: "Slurm"
+  benchmarks:
+  - type: memory-bandwidth-gb-s
+    name: BabelStream
+    value: 3500
+    parameters:
+      array_size: 134217728
+      iterations: 100
+      precision: FP64
 interconnects:
 - NVLink-C2C
 reference: https://cosma.readthedocs.io/en/latest/gpu.html#grace-hopper

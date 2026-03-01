@@ -9,12 +9,20 @@ funders:
 - STFC
 - DiRAC
 - ExCALIBUR
-nodes: 1
-accelerators:
-- "NVIDIA H100 NVL 94GB"
-accelerator-count: 1
-manufacturer: "NVIDIA"
-scheduler: "Slurm"
+partitions:
+- nodes: 1
+  accelerator: "NVIDIA H100 NVL"
+  accelerator-count: 1
+  manufacturer: "NVIDIA"
+  scheduler: "Direct SSH"
+  benchmarks:
+  - type: memory-bandwidth-gb-s
+    name: BabelStream
+    value: 3387
+    parameters:
+      array_size: 134217728
+      iterations: 100
+      precision: FP64
 interconnects:
 reference: https://cosma.readthedocs.io/en/latest/gpu.html#h100 
 ---

@@ -9,12 +9,20 @@ funders:
 - STFC
 - DiRAC
 - ExCALIBUR
-nodes: 1
-accelerators:
-- "NVIDIA V100 32GB"
-accelerator-count: 6
-manufacturer: "NVIDIA"
-scheduler: "Slurm"
+partitions:
+- nodes: 1
+  accelerator: "NVIDIA V100 32GB"
+  accelerator-count: 6
+  manufacturer: "NVIDIA"
+  scheduler: "Direct SSH"
+  benchmarks:
+  - type: memory-bandwidth-gb-s
+    name: BabelStream
+    value: 823
+    parameters:
+      array_size: 134217728
+      iterations: 100
+      precision: FP64
 interconnects:
 reference: https://cosma.readthedocs.io/en/latest/gpu.html
 ---
