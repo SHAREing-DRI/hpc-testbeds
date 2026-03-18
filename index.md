@@ -56,7 +56,7 @@ click its name to find out more about that system.
       {% endif %}
         {% for partition in system.partitions %}
     <tr>
-      <td><a href="{{ site.baseurl }}{{ system.url }}">{{ system.name }}{% if system.partitions.size > 1 %} ({{ partition.accelerator }}){% endif %}</a></td>
+      <td><a href="{{ site.baseurl }}{{ system.url }}">{{ system.name }}{% if system.partitions.size > 1 %} ({% if partition.name %}{{ partition.name }}{% else %}{{ partition.accelerator }}{% endif %}){% endif %}</a></td>
       <td>{{ site.data.statuses[system.status]["shortdescription"] }}</td>
       <td>{{ site.data.categories[system.category]["shortdescription"] }}</td>
       <td>{{ site.data.focuses[system.focus]["shortdescription"] }}</td>
