@@ -2,8 +2,8 @@
 name: <!-- Insert the name of your system here. -->
 status: <!-- Either in-service, pre-production, or planned. See _data/statuses.yml for more detail. -->
 category: <!-- Either production or testbed. See _data/categories.yml for more detail. -->
-focus: <!-- Either general, regional, or discipline. See _data/focuses.yml for more detail. -->
-focus-detail: <!-- Detail to add after the focus, which will follow the word "for". For a regional system, what region(s)? For a discipline-specific system, what discipline(s)? -->
+focus: <!-- Either open, regional, or discipline. See _data/focuses.yml for more detail. -->
+focus-detail: <!-- Detail to add after the focus, which will follow the word "for". For a regional system, what region(s)? For a discipline-specific system, what discipline(s)? For an openly-available system, what is the main purpose? -->
 grouping: <!-- If this system is part of a group of related systems, name the group here. -->
 funders:
 - <!-- Add a list here of organisations funding the system, each preceded by a hyphen -->
