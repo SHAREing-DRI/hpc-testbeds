@@ -2,7 +2,7 @@
 name: "COSMA H100"
 status: in-service
 category: testbed
-focus: discipline
+focus: open
 focus-detail: "Prototyping and testing"
 grouping: "COSMA"
 funders:
