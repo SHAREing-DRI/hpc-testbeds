@@ -71,6 +71,12 @@ To use a single GPU, set `CUDA_VISIBLE_DEVICES`:
 CUDA_VISIBLE_DEVICES=0 ./gpu_program_to_run
 ```
 
+Additionally, a jupyterhub instance is running on this node.  To connect to the jupyterhub server and run interactive python notebooks, first set up an ssh tunnel to gn001:
+```bash
+ssh -L 8888:gn001:443 <username>@login8.cosma.dur.ac.uk
+```
+Then connect to <https://localhost:8888> in a web browser.  You may have to bypass a security message about self-signed certificates.
+
 ### Restrictions
 
 - Nodes are non-exclusive by default (shared with other users). Use `--exclusive` if you require the entire node
