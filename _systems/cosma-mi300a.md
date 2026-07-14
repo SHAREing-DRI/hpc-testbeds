@@ -35,7 +35,7 @@ The MI300A node is a GPU testbed within COSMA.
 
 | Node | RAM | CPU | Access |
 |------|-----|-----|--------|
-| ga008 | 500GB (unified) | 192 cores (AMD EPYC) | Direct SSH |
+| ga008 | 500GB (unified) | 96 cores (AMD EPYC) | Direct SSH |
 
 The MI300A is an APU (Accelerated Processing Unit). The CPU and GPU are on the same silicon and share physical RAM. Therefore, memory copies between CPU and GPU are not necessary which can improve performance for many applications.
 
