@@ -209,11 +209,9 @@ document.querySelector('a.toggle-visibility-controls').addEventListener('click',
 
 ## Disclaimer
 
-This page is not yet complete,
-and we plan to work towards precise guidelines
-on what additional detail should be documented per cluster on such an overview page.
-
 Is your system not included on this list?
 Please [add it at the GitHub repository for this site][github]!
+See [this page][checklist] for guidelines on what information should be documented per cluster.
 
 [github]: <https://github.com/SHAREing-dri/hpc-testbeds>
+[checklist]: <https://shareing-dri.github.io/resources/testbed-checklist>
