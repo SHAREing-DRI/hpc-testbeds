@@ -31,7 +31,7 @@ layout: default
             <li>
               {{ partition.nodes }} nodes,
               with {{ partition.accelerator-count }}
-              {{ partition.accelerator }} accelerator{% if partition.accelerator-count > 1 %}s{% endif %} per node
+              {{ partition.accelerator }} accelerator{% if partition.accelerator-count == "unknown" or partition.accelerator-count > 1 %}s{% endif %} per node
             </li>
             {% if page.partitions.size > 1 %}<ul>{% endif %}
               {% if partition.benchmarks and partition.benchmarks.size > 0 %}
