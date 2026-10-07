@@ -23,8 +23,6 @@ such that it is easier for researchers to find the right system for the right pu
 For each system,
 click its name to find out more about that system.
 
-{% assign columns = "System name,Status,Category,Focus,Focus area,Grouping,Funders,Nodes,Accelerators,Accelerator count per node,Memory bandwidth,Memory bandwidth benchmark,Floating point performance,Floating point performance precision,Floating point benchmark,I/O bandwidth,I/O bandwidth benchmark,Manufacturer,Scheduler,Interconnects,Available profilers,Module environment,Software installation method,Reference" | split: "," %}
-
 <p style="margin-bottom: 0px; padding-bottom: 0px;">
   <a class="toggle-visibility-controls">
     Show/hide columns
@@ -34,8 +32,8 @@ click its name to find out more about that system.
 </p>
 
 <div class="visibility-controls" style="display: none; padding-top: 0px;">
-{% for column in columns %}
-  <a class="toggle-visibility-column column-shown" data-column="{{ forloop.index0 }}">{{ column }}</a>
+{% for column in site.data.columns %}
+  <a class="toggle-visibility-column column-shown" data-column="{{ forloop.index0 }}" title="{{ column.description }}">{{ column.title }}</a>
   {% unless forloop.last %}•{% endunless %}
 {% endfor %}
 </div>
@@ -44,8 +42,8 @@ click its name to find out more about that system.
 <table id="systems" class="display">
   <thead>
     <tr>
-{% for column in columns %}
-      <th>{{ column }}</th>
+{% for column in site.data.columns %}
+      <th title="{{ column.description }}">{{ column.title }}</th>
 {% endfor %}
     </tr>
   </thead>
@@ -66,6 +64,8 @@ click its name to find out more about that system.
       <td>{{ partition.nodes }}</td>
       <td>{{ partition.accelerator }}</td>
       <td>{{ partition.accelerator-count }}</td>
+      <td>{% if partition.accelerator-memory-gb %}{{ partition.accelerator-memory-gb }} GiB{% else %}&mdash;{% endif %}</td>
+      <td>{% if partition.host-memory-gb %}{{ partition.host-memory-gb }} GiB{% else %}&mdash;{% endif %}</td>
       {% for benchmark_category in site.data.benchmarks %}
         {% assign category_name = benchmark_category[0] %}
         {% assign category = benchmark_category[1] %}
@@ -101,31 +101,13 @@ click its name to find out more about that system.
     {% endfor %}
   </tbody>
   <tfoot> <!-- add empty space to indicate we want to have a filter drop-down -->
-    <th aria-label="Empty table footer for System name column"></th>
-    <th>&nbsp;</th> <!-- Status -->
-    <th>&nbsp;</th> <!-- Categories -->
-    <th>&nbsp;</th> <!-- Focus -->
-    <th>&nbsp;</th> <!-- Focus detail -->
-    <th>&nbsp;</th> <!-- Grouping -->
-    <th aria-label="Empty table footer for Funders column"></th>
-    <th aria-label="Empty table footer for Nodes column"></th>
-    <th>&nbsp;</th> <!-- Accelerator -->
-    <th>&nbsp;</th> <!-- Accelerator count -->
-    {% for benchmark_category in site.data.benchmarks %}
-      {% assign category = benchmark_category[1] %}
-    <th aria-label="Empty table footer for {{ category.description }} value column"></th>
-      {% if category.require_precision %}
-    <th>&nbsp;</th> <!-- {{ category.description }} benchmark precision -->
-      {% endif %}
-    <th>&nbsp;</th> <!-- {{ category.description }} benchmark name -->
+    {% for column in site.data.columns %}
+    {% if column.filter %}
+    <th>&nbsp;</th> <!-- {{ column }} -->
+    {% else %}
+    <th aria-label="Empty table footer for {{ column.title }} column"></th>
+    {% endif %}
     {% endfor %}
-    <th>&nbsp;</th> <!-- Manufacturer -->
-    <th>&nbsp;</th> <!-- Scheduler -->
-    <th aria-label="Empty table footer for Interconnects column"></th>
-    <th aria-label="Empty table footer for Profilers column"></th>
-    <th>&nbsp;</th> <!-- Module environment -->
-    <th aria-label="Empty table footer for Software installation method column"></th>
-    <th aria-label="Empty table footer for Reference column"></th>
   </tfoot>
 </table>
 
