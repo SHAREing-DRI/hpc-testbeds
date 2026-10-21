@@ -14,6 +14,8 @@ partitions:
   nodes: 2
   accelerator: "NVIDIA A100 40GB"
   accelerator-count: 1
+  accelerator-memory-gb: 40
+  host-memory-gb: 4096
   manufacturer: "Dell"
   scheduler: "Slurm"
   benchmarks:
@@ -28,6 +30,8 @@ partitions:
   nodes: 1
   accelerator: "NVIDIA A100 40GB"
   accelerator-count: 1
+  accelerator-memory-gb: 40
+  host-memory-gb: 1024
   manufacturer: "Dell"
   scheduler: "Direct SSH"
 interconnects:

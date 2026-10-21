@@ -13,6 +13,8 @@ partitions:
 - nodes: 1
   accelerator: "NVIDIA H100 NVL"
   accelerator-count: 1
+  accelerator-memory-gb: 94
+  host-memory-gb: 510
   manufacturer: "NVIDIA"
   scheduler: "Direct SSH"
   benchmarks:

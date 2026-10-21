@@ -13,6 +13,8 @@ partitions:
 - nodes: 1
   accelerator: "AMD MI300A 128GB"
   accelerator-count: 4
+  accelerator-memory-gb: 512
+  host-memory-gb: 512
   manufacturer: "AMD"
   scheduler: "Direct SSH"
   benchmarks:

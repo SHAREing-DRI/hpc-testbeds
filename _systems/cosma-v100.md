@@ -13,6 +13,8 @@ partitions:
 - nodes: 1
   accelerator: "NVIDIA V100 32GB"
   accelerator-count: 6
+  accelerator-memory-gb: 192
+  host-memory-gb: 768
   manufacturer: "NVIDIA"
   scheduler: "Direct SSH"
   benchmarks:

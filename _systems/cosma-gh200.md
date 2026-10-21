@@ -14,12 +14,16 @@ partitions:
   nodes: 1
   accelerator: "NVIDIA GH200"
   accelerator-count: 1
+  accelerator-memory-gb: 96
+  host-memory-gb: 480
   manufacturer: "NVIDIA"
   scheduler: "Direct SSH"
 - name: "gn003"
   nodes: 1
   accelerator: "NVIDIA GH200"
   accelerator-count: 1
+  accelerator-memory-gb: 96
+  host-memory-gb: 480
   manufacturer: "NVIDIA"
   scheduler: "Slurm"
   benchmarks:

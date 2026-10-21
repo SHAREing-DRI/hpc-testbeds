@@ -13,6 +13,8 @@ partitions:
 - nodes: 8
   accelerator: "NVIDIA A30"
   accelerator-count: 1
+  accelerator-memory-gb: 24
+  host-memory-gb: 2048
   manufacturer: "NVIDIA"
   scheduler: "Slurm"
   benchmarks:

@@ -13,6 +13,8 @@ partitions:
 - nodes: 1
   accelerator: "AMD MI100"
   accelerator-count: 1
+  accelerator-memory-gb: 32
+  host-memory-gb: 1024
   manufacturer: "AMD"
   scheduler: "Slurm"
   benchmarks:

@@ -13,6 +13,8 @@ partitions:
 - nodes: 1
   accelerator: "AMD MI300X 192GB"
   accelerator-count: 8
+  accelerator-memory-gb: 1536
+  host-memory-gb: 2048
   manufacturer: "AMD"
   scheduler: "Slurm"
   benchmarks:
@@ -39,7 +41,7 @@ The MI300X node is a GPU testbed within COSMA.
 
 The MI300X is AMD's data center GPU, optimised for LLM and genAI training and inference.
 
-The MI300X node has 8x GPUs.  
+The MI300X node has 8x GPUs.
 
 ### Documentation
 
