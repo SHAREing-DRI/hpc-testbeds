@@ -12,8 +12,10 @@ partitions:
 - nodes: 6
   accelerator: "NVIDIA A100 40GB"
   accelerator-count: 8
+  accelerator-memory-gb: 320
   manufacturer: "Atos"
   scheduler: "Slurm"
+  host-memory-gb: 512
 profilers:
 - NVIDIA Nsight
 - Intel VTune/Advisor
@@ -38,6 +40,13 @@ It forms part of the Supercomputing Wales infrastructure.
 
 GPUs are linked by NVLink in pairs.
 Using more than 2 GPUs in parallel requires data transfer over the system bus.
+Using MPI with more than two ranks
+is not expected to give substantial speedup
+unless software makes very light use of the interconnect.
+
+<p align="center">
+  <img src="/hpc-testbeds/images/accelerateai-topology.svg" title="Diagram of topology of AccelerateAI node" width="500px">
+</p>
 
 ### Documentation
 

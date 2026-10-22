@@ -11,6 +11,8 @@ partitions: <!-- Duplicate the following block for each partition your system ha
 - nodes: <!-- How many nodes does the system have? -->
   accelerator: <!-- What accelerator is used in this partition? -->
   accelerator-count: <!-- How many of these accelerators are present per node? -->
+  accelerator-memory-gb: <!-- How much device memory is there per node? I.e. memory per accelerator times accelerator-count -->
+  host-memory-gb: <!-- How much host memory is there per node? For CPU nodes this will be the same as the accelerator memory. -->
   manufacturer: <!-- Who manufactured the nodes in this partition? E.g. Dell, Fujitsu, Lenovo -->
   scheduler: <!-- What scheduler is used to manage on this partition? E.g. Slurm, PBS Pro, SGE, Spectrum Scale, Direct SSH -->
   benchmarks: <!-- Single-node benchmark results can be given here, or this section can be removed -->

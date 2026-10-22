@@ -13,6 +13,8 @@ partitions:
 - nodes: 2
   accelerator: "AMD MI210"
   accelerator-count: 2
+  accelerator-memory-gb: 128
+  host-memory-gb: 1024
   manufacturer: "AMD"
   scheduler: "Slurm"
   benchmarks:

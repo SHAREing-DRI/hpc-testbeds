@@ -13,11 +13,15 @@ partitions:
 - nodes: 114
   accelerator: "NVIDIA A100 40GB"
   accelerator-count: 4
+  accelerator-memory-gb: 160
+  host-memory-gb: 1024
   manufacturer: "Atos"
   scheduler: "Slurm"
 - nodes: 65
   accelerator: "NVIDIA A100 80GB"
   accelerator-count: 4
+  accelerator-memory-gb: 320
+  host-memory-gb: 1024
   manufacturer: "Atos"
   scheduler: "Slurm"
 profilers:

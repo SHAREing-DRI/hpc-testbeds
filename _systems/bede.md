@@ -10,30 +10,40 @@ funders:
 - EPSRC
 partitions:
 - nodes: 32
-  accelerator: NVIDIA Tesla V100 32G
+  accelerator: NVIDIA Tesla V100 32GB
   accelerator-count: 4
+  accelerator-memory-gb: 128
+  host-memory-gb: 512
   manufacturer: IBM
   scheduler: Slurm
 - nodes: 4
-  accelerator: NVIDIA Tesla T4 16G
+  accelerator: NVIDIA Tesla T4 16GB
   accelerator-count: 4
+  accelerator-memory-gb: 64
+  host-memory-gb: 256
   manufacturer: IBM
   scheduler: Slurm
 - nodes: 6
   accelerator: NVIDIA H100 96GB
   accelerator-count: 1
+  accelerator-memory-gb: 96
+  host-memory-gb: 480
   manufacturer: Vespertec
   scheduler: Slurm
   name: H100 Verpertec
 - nodes: 1
   accelerator: NVIDIA H100 96GB
   accelerator-count: 1
+  accelerator-memory-gb: 96
+  host-memory-gb: 480
   manufacturer: Supermicro
   scheduler: Slurm
   name: H100 Supermicro
 - nodes: 1
   accelerator: NVIDIA H100 144GB
   accelerator-count: 2
+  accelerator-memory-gb: 288
+  host-memory-gb: 960
   manufacturer: Supermicro
   scheduler: Slurm
 interconnects:

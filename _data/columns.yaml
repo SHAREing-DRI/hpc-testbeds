@@ -1,0 +1,79 @@
+- title: System name
+  description: The name of the testbed
+  filter: false
+- title: Status
+  description: Whether the testbed is currently available
+  filter: true
+- title: Category
+  description: What sort of testbed this is (a production system that may be used for testing, or a smaller prototype test bed)
+  filter: true
+- title: Focus
+  description: Whether this testbed is limited to a certain community
+  filter: true
+- title: Focus area
+  description: The specific community to which the testbed is targeted
+  filter: true
+- title: Grouping
+  description: The name of the group, if the test bed is part of a larger grouping of facilities
+  filter: true
+- title: Funders
+  description: Who paid for the testbed
+  filter: false
+- title: Nodes
+  description: How many nodes are on the testbed
+  filter: false
+- title: Accelerators
+  description: What model of accelerator provides the primary compute power of the test bed
+  filter: true
+- title: Accelerator count per node
+  description: Number of (primary) accelerators
+  filter: true
+- title: Accelerated memory
+  description: Amount of RAM available to the primary accelerators; e.g. on a GPU testbed, the total GPU memory
+  filter: false
+- title: Host memory
+  description: Amount of RAM available to the host. On CPU-accelerated machines, this will be equal to the accelerated memory.
+  filter: false
+  filter: false
+- title: Memory bandwidth
+  description: Rate at which accelerated software can read from the accelerated memory
+  filter: false
+- title: Memory bandwidth benchmark
+  description: What software was used to measure the memory bandwidth
+  filter: true
+- title: Floating point performance
+  description: Rate at which accelerated software can perform computations
+  filter: false
+- title: Floating point performance precision
+  description: Size of the elementary datatypes used in computations to measure the floating point performance
+  filter: true
+- title: Floating point benchmark
+  description: What software was used to measure the floating-point performance
+  filter: true
+- title: I/O bandwidth
+  description: Rate at which accelerated software can read from the system storage
+  filter: false
+- title: I/O bandwidth benchmark
+  description: What software was used to measure the I/O bandwidth
+  filter: true
+- title: Manufacturer
+  description: Who produced the testbed hardware
+  filter: true
+- title: Scheduler
+  description: How are workloads run on the test bed
+  filter: true
+- title: Interconnects
+  description: What networking technologies link nodes of the test bed together
+  filter: false
+- title: Available profilers
+  description: What software is available to instrument and understand the performance of software on the testbed
+  filter: false
+- title: Module environment
+  description: How is software loaded by users of the testbed
+  filter: true
+- title: Software installation method
+  description: How are new modules installed
+  filter: false
+- title: Reference
+  description: Where can more information about the testbed be found out
+  filter: false
