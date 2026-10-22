@@ -55,12 +55,12 @@ The following CPU testbed nodes are available within COSMA:
 | mad11 | 1TB | 256 cores (Intel Sierra Forest) | Direct SSH/Slurm | do025 | &mdash; |
 | mad12 | 1.5TB | 256 cores (AMD EPYC Turin) | Direct SSH/Slurm | do025 | &mdash; |
 | mad06 | 1TB | 128 cores (AMD EPYC Milan-X) | Direct SSH/Slurm | do025 | &mdash; |
-| cosma5 | TODO | TODO | Slurm | hpcicc | ICC collaborators only |
+| cosma5 | 1.5TB | 256 cores (AMD EPYC Bergamo) | Slurm | hpcicc | ICC collaborators only |
 | cosma8-shm3 | 0.75TB | 192 cores (AMD EPYC Milan) | Slurm | do009 | &mdash; |
-| cosma8-ska | TODO | TODO | Slurm | do011 | SKA users only |
-| cosma8-milan | TODO | TODO | Slurm | Any | DiRAC RAC users only |
-| cosma8-rome | TODO | TODO | Slurm | Any | DiRAC RAC users only |
-| cosma7-shm2 | 5.8TB | 48 cores (Intel Cascade Lake) | Slurm | TODO | TODO |
+| cosma8-ska | 4TB | 56 cores (Intel Ice Lake) | Slurm | do011 | SKA users only |
+| cosma8-milan | 1TB | 128 cores (AMD EPYC Milan) | Slurm | Any | DiRAC RAC users only |
+| cosma8-rome | 1TB | 128 cores (AMD EPYC Rome) | Slurm | Any | DiRAC RAC users only |
+| cosma7-shm2 | 5.8TB | 48 cores (Intel Cascade Lake) | Slurm | do025 | &mdash; |
 
 Nodes marked "Direct SSH/Slurm"
 have a hybrid setup where they can be used interactively during the day (8am&ndash;7pm),
